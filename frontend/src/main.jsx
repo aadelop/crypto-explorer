@@ -11,9 +11,9 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path="*" element={<Home/>}></Route>
       <Route path="/" element={<Home/>}>
-        <Route path="/block" element={<Block/>}> </Route>
-        <Route path="/tx" element={<Transaction />}></Route>
-        <Route path="/balance" element={<Balance/>}></Route>
+        <Route path="/block/:block" element={<Block/>}> </Route>
+        <Route path="/tx/:tx" element={<Transaction />}></Route>
+        <Route path="/balance/:address" element={<Balance/>}></Route>
       </Route>
     </Routes>
   </BrowserRouter>
