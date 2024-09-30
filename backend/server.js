@@ -1,3 +1,4 @@
+const cors = require('cors')
 const express = require("express")
 const {appplication } = require("express")
 const INFURA_MAINNET = "https://mainnet.infura.io/v3/75bc45b8eac4415497742ad30526545b"
@@ -6,6 +7,7 @@ const web3 = new Web3(INFURA_MAINNET)
 
 const app = express()
 app.listen(3333)
+app.use(cors())
 
 BigInt.prototype.toJSON = function () {
     return this.toString();
