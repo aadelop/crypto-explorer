@@ -19,17 +19,31 @@ app.get("/", async(req,res) =>{
 })
 
 app.get("/block/:blockNumber", async(req,res) =>{
-    const block = await web3.eth.getBlock(req.params.blockNumber)
-    res.send(block)
+    try {
+        const block = await web3.eth.getBlock(req.params.blockNumber)
+        res.send(block)
+    } catch (error) {
+        res.status(500).send({message: error.message})
+    }
+
 })
 
 app.get("/tx/:tx", async (req,res) => {
-    const tx = await web3.eth.getTransaction(req.params.tx)
-    res.send(tx)
+    try {
+        const tx = await web3.eth.getTransaction(req.params.tx)
+        res.send(tx)
+    } catch (error) {
+        res.status(500).send({message: error.message})
+    }
+
 })
 
 app.get("/balance/:address", async (req,res) =>{
-    let  balance = await web3.eth.getBalance(req.params.address)
-    balance = Number(balance)
-    res.send({balance, ethers:balance / 1e18, ethers2:web3.utils.fromWei(balance,'ether')})
+    try {
+        let  balance = await web3.eth.getBalance(req.params.address)
+        balance = Number(balance)
+        res.send({balance, ethers:balance / 1e18, ethers2:web3.utils.fromWei(balance,'ether')})
+    } catch (error) {
+        res.status(500).send({message: error.message})
+    }
 })
