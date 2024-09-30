@@ -27,7 +27,7 @@ export function Block(){
         return <h3>Error</h3>
 
     return <div className="container">
-        <p>Blocks</p>
+        <h4>Block [{params.block}]  info:</h4>
         <pre> {JSON.stringify(data,null,4)}</pre>
     </div>
 }
