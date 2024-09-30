@@ -1,21 +1,6 @@
 import { useParams } from "react-router-dom"
 import {useQuery} from 'react-query'
-
-async function getBlock(block){
-   const response = fetch(`http://localhost:3333/block/${block.queryKey[1]}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        return data
-    });
-
-    return response;
-    //.then(response => response.body)
-   /*  const data = await response
-    const reader = data.body.getReader()
-    console.log("Reader:", reader) */
-   /*  return data */
-}
+import {getBlock} from './api'
 
 export function Block(){
     const params = useParams()
