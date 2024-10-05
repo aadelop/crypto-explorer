@@ -14,7 +14,6 @@ export function Home (){
         }
       }, [param]);
 
-    console.log("SHWOING PARAMS", Object.values(param)[0]);
     const navigate = useNavigate()
     const {register, handleSubmit} = useForm()
     const submitForm = (data) => {

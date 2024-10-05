@@ -17,7 +17,6 @@ export async function getBlock(block){
  }
 
  export async function getBalance(balance){
-    console.log("balance of getBalance:", balance);
     const response = fetch(`http://localhost:3333/balance/${balance.queryKey[1]}`)
      .then(response => response.json())
      .then(data => {

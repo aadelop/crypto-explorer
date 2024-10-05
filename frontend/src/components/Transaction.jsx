@@ -19,16 +19,16 @@ export function Transaction(){
             <thead>
                 <tr>
                     <th>Block</th>
-                    <Link to={`/block/${data.blockNumber}`} ><td>{data.blockNumber}</td></Link>
+                    <td><Link to={`/block/${data.blockNumber}`} >{data.blockNumber}</Link></td>
                     
                 </tr>
                 <tr>
                     <th>From</th>
-                    <Link to={`/balance/${data.from}`}><td>{data.from}</td></Link>
+                    <td><Link to={`/balance/${data.from}`}>{data.from}</Link></td>
                 </tr>
                 <tr>
                     <th>To</th>
-                    <Link to={`/balance/${data.to}`}><td>{data.to}</td></Link>
+                    <td><Link to={`/balance/${data.to}`}>{data.to}</Link></td>
                 </tr>
                 <tr>
                     <th>Value</th>

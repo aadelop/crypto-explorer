@@ -23,7 +23,7 @@ export function Block(){
                 {
                     data.transactions.map((item,index) =>(
                         <tr key={index}>
-                            <Link to={`/tx/${item}`}><td>{item}</td></Link>
+                            <td><Link to={`/tx/${item}`}>{item}</Link></td>
                             
                         </tr>
                     ))
