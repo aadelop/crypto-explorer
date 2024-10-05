@@ -12,7 +12,7 @@ export function Balance (){
         return <h3>Error</h3>
 
     return <div className="container">
-        <h4>Address [{params.address}]  info:</h4>
+        <h4>Address [{params.address.slice(0,5)}...{params.address.slice(-5)}]  info:</h4>
         <pre> {JSON.stringify(data,null,4)}</pre>
     </div>
 }
