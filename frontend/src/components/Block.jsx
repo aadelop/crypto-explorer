@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import {useQuery} from 'react-query'
 import {getBlock} from './api'
 
@@ -13,6 +13,24 @@ export function Block(){
 
     return <div className="container">
         <h4>Block [{params.block}]  info:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transactions list</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    data.transactions.map((item,index) =>(
+                        <tr key={index}>
+                            <Link to={`/tx/${item}`}><td>{item}</td></Link>
+                            
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+
         <pre> {JSON.stringify(data,null,4)}</pre>
     </div>
 }
